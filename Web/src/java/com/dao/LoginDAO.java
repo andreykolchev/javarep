@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.query;
+package com.dao;
 
 import com.entity.Login;
 import javax.persistence.EntityManager;
@@ -14,12 +14,12 @@ import javax.persistence.Persistence;
  *
  * @author user
  */
-public class DataQuery {
+public class LoginDAO {
 
     EntityManagerFactory emf;
     EntityManager em;
 
-    public DataQuery() {
+    public LoginDAO() {
         emf = Persistence.createEntityManagerFactory("WebPU");
         em = emf.createEntityManager();
         em.getTransaction().begin();

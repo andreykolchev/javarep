@@ -5,7 +5,7 @@
  */
 package com.controller;
 
-import com.query.DataQuery;
+import com.dao.LoginDAO;
 import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -22,7 +22,7 @@ import org.primefaces.context.RequestContext;
 public class LoginController implements Serializable{
     private String username;
     private String password;
-    private final DataQuery query = new DataQuery();
+    private final LoginDAO query = new LoginDAO();
 
     public String loginControl(){
         if(query.loginControl(username, password)){
