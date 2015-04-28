@@ -1,0 +1,13 @@
+
+<%@ page pageEncoding="UTF-8" %>
+<div class="sidebar1">
+    <h4>Tables:</h4>
+    <ul class="nav">
+     
+       <li><a href="tables.jsp?table_name=ItemCategory">Item categories</a></li>
+       <li><a href="tables.jsp?table_name=PlaceCategory">Places categories</a></li>
+       <li><a href="tables.jsp?table_name=Place">Places</a></li>
+       <li><a href="tables.jsp?table_name=Item">Items</a></li>
+      
+    </ul>
+</div>
