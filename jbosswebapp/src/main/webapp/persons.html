@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script
+	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+     $(document).on("pageinit", "#personPage", function(person){
+    	 $.getJSON("rest/persons", function(persons) {
+        	  var tableOfPersons = $("#personsTable"); 
+        	  tableOfPersons.empty();
+        	  tableOfPersons.append("<thead><tr><th>Id</th><th>Surname</th><th>Name</th><th>Patronymic</th><th>Birsday</th></tr></thead>");
+        	  $.each(persons, function(index, person) {
+        	     tableOfPersons.append("<tr><td>"+person.id+"</td><td>"+person.surname+"</td><td>"+person.name+"</td><td>"+person.patronymic+"</td><td>"+person.birsday+"</td></tr>");
+              });
+              tableOfPersons.table("refresh");
+         });
+     });
+</script>
+
+</head>
+<body>
+	<div data-role="page" id="personPage">
+		<div data-role="header">
+			<h1>Persons</h1>
+		</div>
+		<div data-role="content">
+			<table data-role="table" id="personsTable" class="ui-responsive">
+				<thead>
+					<tr><th>Id</th><th>Surname</th><th>Name</th><th>Patronymic</th><th>Birsday</th></tr>
+				</thead>
+				<tbody>
+					<tr><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+				</tbody>
+			</table>
+
+		</div>
+		<div data-role="footer">
+			<h4></h4>
+		</div>
+	</div>
+</body>
+</html>
